@@ -3,9 +3,7 @@ import "@/styles/globals.css";
 import { GeistMono } from "geist/font/mono";
 import { GeistSans } from "geist/font/sans";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-
-const inter = Inter({ subsets: ["latin"] });
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
   title: "Irsyad Al Ghifary",
@@ -31,7 +29,10 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <main className="py-24">{children}</main>
+          <main className="py-24">
+            {children}
+            <SpeedInsights />
+          </main>
         </ThemeProvider>
       </body>
     </html>

@@ -38,5 +38,9 @@ function ProjectContainer({
   children,
   ...props
 }: React.HTMLAttributes<HTMLDivElement>) {
-  return <div className="grid grid-cols-3">{children}</div>;
+  return (
+    <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1">
+      {children}
+    </div>
+  );
 }

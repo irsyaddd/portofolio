@@ -44,7 +44,7 @@ export const projects: ProjectsProps[] = [
     created_at: "2024-01-24",
   },
   {
-    title: "Nowted",
+    title: "Nowted (Design Challenge)",
     image: <ImageIcon className="h-14 w-14 opacity-20" />,
     content: "Blabla",
     created_at: "2023-07-28",
