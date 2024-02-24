@@ -1,7 +1,6 @@
 import Contacts from "@/components/contacts";
 import ProjectList from "@/components/project-list";
 import { ThemeToggle } from "@/components/theme-toogle";
-import { projects } from "@/data";
 import Link from "next/link";
 import Balance from "react-wrap-balancer";
 
@@ -41,7 +40,7 @@ export default function IndexPage() {
           </Balance>
         </Header>
         <Contacts />
-        <ProjectList projects={projects} className="mt-12" />
+        <ProjectList className="mt-12" />
       </div>
     </div>
   );
