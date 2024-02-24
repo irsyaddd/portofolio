@@ -31,7 +31,7 @@ export default function IndexPage() {
                   prefetch={false}
                   target="_blank"
                 >
-                  Boleh Belajar Website
+                  Boleh Belajar Websites
                 </Link>
               </span>
               . Spent most of my free time learning about frontend and playing
