@@ -20,6 +20,9 @@ export function ProjectsCardSkeleton() {
       <ProjectSkeleton />
       <ProjectSkeleton />
       <ProjectSkeleton />
+      <ProjectSkeleton />
+      <ProjectSkeleton />
+      <ProjectSkeleton />
     </div>
   );
 }
