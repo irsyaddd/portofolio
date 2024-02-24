@@ -4,13 +4,15 @@ import { unstable_noStore as noStore } from "next/cache";
 export async function getProjects() {
   noStore();
   try {
-    const { data: posts, error } = await supabase.from("posts").select("*");
+    const { data: posts, error } = await supabase
+      .from("posts")
+      .select("*")
+      .order("created_at", { ascending: false });
 
-    if (error) throw error.message;
+    if (error) return [];
 
     return posts;
   } catch (error) {
-    console.log("Error Fetching Projects ", error);
-    return [];
+    throw error;
   }
 }

@@ -21,7 +21,7 @@ export function ThemeToggle() {
   }, []);
 
   if (!mounted) {
-    return null;
+    return <div className="w-9 h-9 border" />;
   }
 
   return (

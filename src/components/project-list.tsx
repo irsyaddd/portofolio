@@ -5,7 +5,6 @@ import { ImageIcon } from "@radix-ui/react-icons";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import SectionTitle from "./section-title";
 
 export default async function ProjectList({
   className,
@@ -15,11 +14,10 @@ export default async function ProjectList({
 
   return (
     <div className={cn(className, "space-y-7")} {...props}>
-      <SectionTitle>Projects</SectionTitle>
       <ProjectContainer>
         {projects.map((project, index) => (
           <Link key={index} href={`/projects/${project.slug}`}>
-            <Card className="dark:bg-zinc-900 rounded-none">
+            <Card className="dark:bg-zinc-900 rounded-none shadow-none">
               <CardContent className="h-64 flex items-center justify-center">
                 {project.thumbnail ? (
                   <Image alt={project.title} src={project.thumbnail} />

@@ -1,7 +1,13 @@
 import Contacts from "@/components/contacts";
 import ProjectList from "@/components/project-list";
+import SectionTitle from "@/components/section-title";
+import { ProjectsCardSkeleton } from "@/components/skeletons";
 import { ThemeToggle } from "@/components/theme-toogle";
+import { Card, CardContent, CardFooter } from "@/components/ui/card";
+import { Skeleton } from "@/components/ui/skeleton";
+import { Cross1Icon } from "@radix-ui/react-icons";
 import Link from "next/link";
+import { Suspense } from "react";
 import Balance from "react-wrap-balancer";
 
 export default function IndexPage() {
@@ -40,7 +46,12 @@ export default function IndexPage() {
           </Balance>
         </Header>
         <Contacts />
-        <ProjectList className="mt-12" />
+        <div className="mt-12 space-y-4">
+          <SectionTitle>Projects</SectionTitle>
+          <Suspense fallback={<ProjectsCardSkeleton />}>
+            <ProjectList />
+          </Suspense>
+        </div>
       </div>
     </div>
   );
