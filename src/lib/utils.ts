@@ -21,7 +21,6 @@ const dayNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
 export function formatDate(dateStr: string) {
   const date = new Date(dateStr);
-  const day = dayNames[date.getDay()];
   const dayNumber = date.getDate().toString();
   const month = monthNames[date.getMonth()];
   const year = date.getFullYear();
