@@ -19,13 +19,31 @@ const monthNames = [
 // Define an array of day names in Indonesian.
 const dayNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
-export function formatDate(dateStr: string) {
+export function formatDate(dateStr: string, type: "showcase" | "detail") {
   const date = new Date(dateStr);
   const dayNumber = date.getDate().toString();
   const month = monthNames[date.getMonth()];
   const year = date.getFullYear();
 
-  return `${dayNumber.padStart(2, "0")} ${month.toUpperCase()} ${year}`;
+  let formattedDate;
+
+  switch (type) {
+    case "detail":
+      formattedDate = `${dayNumber.padStart(2, "0")} ${month} ${year}`;
+      break;
+
+    case "showcase":
+      formattedDate = `${dayNumber.padStart(
+        2,
+        "0"
+      )} ${month.toUpperCase()} ${year}`;
+      break;
+
+    default:
+      break;
+  }
+
+  return formattedDate;
 }
 
 export function cn(...inputs: ClassValue[]) {
