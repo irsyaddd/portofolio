@@ -28,7 +28,7 @@ export default async function ProjectList({
               <CardFooter className="flex-col items-start space-y-1">
                 <p className="text-sm">{project.title}</p>
                 <p className="text-xs font-mono tracking-tight">
-                  {formatDate(project.created_at)}
+                  {formatDate(project.created_at, "showcase")}
                 </p>
               </CardFooter>
             </Card>

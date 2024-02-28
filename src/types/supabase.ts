@@ -27,7 +27,7 @@ export type Database = {
         }
         Relationships: []
       }
-      post_categories: {
+      project_categories: {
         Row: {
           category_id: number
           post_id: number
@@ -52,13 +52,14 @@ export type Database = {
             foreignKeyName: "post_categories_post_id_fkey"
             columns: ["post_id"]
             isOneToOne: false
-            referencedRelation: "posts"
+            referencedRelation: "projects"
             referencedColumns: ["id"]
           }
         ]
       }
-      posts: {
+      projects: {
         Row: {
+          category: number | null
           content: string
           created_at: string
           id: number
@@ -67,6 +68,7 @@ export type Database = {
           title: string
         }
         Insert: {
+          category?: number | null
           content: string
           created_at?: string
           id?: number
@@ -75,6 +77,7 @@ export type Database = {
           title: string
         }
         Update: {
+          category?: number | null
           content?: string
           created_at?: string
           id?: number
