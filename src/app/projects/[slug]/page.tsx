@@ -12,11 +12,10 @@ export default async function ProjectDetailPage({
   if (!data) throw new Error("Error Fetching Product Detail.");
 
   return (
-    <div>
-      <h1>{data.title}</h1>
-      <h3>{formatDate(data.created_at, "detail")}</h3>
-      <p>{data.content}</p>
-      <p>{data.category ?? "undefined"}</p>
+    <div className="flex h-screen items-center justify-center">
+      <p>
+        The detail of {data.title} is in progress. Please come back later 😬🙏🏻
+      </p>
     </div>
   );
 }
