@@ -49,3 +49,9 @@ export function formatDate(dateStr: string, type: "showcase" | "detail") {
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
+
+export const removeTags = (str: string) => {
+  if (str === null || str === '') return false;
+  else str = str.toString();
+  return str.replace(/(<([^>]+)>)/gi, '');
+};

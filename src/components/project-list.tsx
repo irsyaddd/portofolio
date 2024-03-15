@@ -5,6 +5,8 @@ import { ImageIcon } from "@radix-ui/react-icons";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import Tiptap from "./tiptap/tiptap";
+
 
 export default async function ProjectList({
   className,
@@ -26,7 +28,9 @@ export default async function ProjectList({
                 )}
               </CardContent>
               <CardFooter className="flex-col items-start space-y-1">
-                <p className="text-sm">{project.title}</p>
+                <div className="text-sm">
+                  <Tiptap content={project.title}/>
+                </div>
                 <p className="text-xs font-mono tracking-tight">
                   {formatDate(project.created_at, "showcase")}
                 </p>
