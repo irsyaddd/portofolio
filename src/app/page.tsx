@@ -3,7 +3,6 @@ import ProjectList from "@/components/project-list";
 import SectionTitle from "@/components/section-title";
 import { ProjectsCardSkeleton } from "@/components/skeletons";
 import { ThemeToggle } from "@/components/theme-toogle";
-import Tiptap from "@/components/tiptap";
 import Link from "next/link";
 import { Suspense } from "react";
 
