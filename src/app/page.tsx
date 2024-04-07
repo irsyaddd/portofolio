@@ -7,17 +7,12 @@ import Link from "next/link";
 import { Suspense } from "react";
 
 export default async function IndexPage() {
-  const x: any = await fetch(process.env.BASE_URL + "/api/hello");
-  const data = await x.json();
-
-  console.log(data);
-
   return (
     <div className="container">
       <Header>
         <div className="flex justify-between items-center">
           <h1 className="font-semibold font-mono uppercase">
-            Irsyad Al Ghifary {data.data.message}
+            Irsyad Al Ghifary
           </h1>
           <ThemeToggle />
         </div>
