@@ -6,7 +6,7 @@ import { ThemeToggle } from "@/components/theme-toogle";
 import Link from "next/link";
 import { Suspense } from "react";
 
-export default function IndexPage() {
+export default async function IndexPage() {
   return (
     <div className="container">
       <Header>
