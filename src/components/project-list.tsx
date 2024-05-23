@@ -1,5 +1,5 @@
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
-import { getProjects } from "@/lib/action";
+import { GetProjects } from "@/lib/action";
 import { cn, formatDate } from "@/lib/utils";
 import { ImageIcon } from "@radix-ui/react-icons";
 import Image from "next/image";
@@ -7,12 +7,11 @@ import Link from "next/link";
 import React from "react";
 import Tiptap from "./tiptap/tiptap";
 
-
 export default async function ProjectList({
   className,
   ...props
 }: React.HTMLAttributes<HTMLDivElement>) {
-  const projects = await getProjects();
+  const projects = await GetProjects();
 
   return (
     <div className={cn(className, "space-y-7")} {...props}>
@@ -29,7 +28,7 @@ export default async function ProjectList({
               </CardContent>
               <CardFooter className="flex-col items-start space-y-1">
                 <div className="text-sm">
-                  <Tiptap content={project.title}/>
+                  <Tiptap content={project.title} />
                 </div>
                 <p className="text-xs font-mono tracking-tight">
                   {formatDate(project.created_at, "showcase")}

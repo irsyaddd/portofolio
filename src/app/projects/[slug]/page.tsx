@@ -1,6 +1,6 @@
 import Tiptap from "@/components/tiptap/tiptap";
 import { Button } from "@/components/ui/button";
-import { getProjectsDetail } from "@/lib/action";
+import { GetProjectsDetail } from "@/lib/action";
 import Link from "next/link";
 
 export default async function ProjectDetailPage({
@@ -8,7 +8,7 @@ export default async function ProjectDetailPage({
 }: {
   params: { slug: string };
 }) {
-  const data = await getProjectsDetail(params.slug);
+  const data = await GetProjectsDetail(params.slug);
 
   if (!data) throw new Error("Error Fetching Product Detail.");
 
