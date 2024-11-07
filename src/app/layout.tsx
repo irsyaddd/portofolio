@@ -5,6 +5,14 @@ import { GeistSans } from "geist/font/sans";
 import type { Metadata } from "next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Toaster } from "@/components/ui/sonner";
+import { Gelasio } from "next/font/google";
+
+const gelasio = Gelasio({
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["400", "500", "600"],
+  variable: "--font-gelasio",
+});
 
 export const metadata: Metadata = {
   title: "Irsyad Al Ghifary",
@@ -19,19 +27,19 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`min-h-screen bg-background antialiased ${GeistSans.variable} ${GeistMono.variable}`}
+      className={`min-h-screen antialiased ${GeistSans.variable} ${GeistMono.variable} ${gelasio.variable}`}
       suppressHydrationWarning
     >
       <body>
         <ThemeProvider
           storageKey="theme"
           attribute="class"
-          defaultTheme="system"
+          defaultTheme="light"
           enableSystem
           disableTransitionOnChange
         >
-          <main className="py-24">
-            <div className="max-w-4xl mx-auto">{children}</div>
+          <main className="py-32">
+            <div className="max-w-[90rem] mx-auto flex gap-12">{children}</div>
             <Toaster />
             <SpeedInsights />
           </main>

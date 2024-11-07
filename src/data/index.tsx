@@ -4,7 +4,7 @@ import {
   EnvelopeClosedIcon,
   GitHubLogoIcon,
   InstagramLogoIcon,
-  LinkedInLogoIcon
+  LinkedInLogoIcon,
 } from "@radix-ui/react-icons";
 
 export const contacts: ContactListProps[] = [
@@ -18,21 +18,21 @@ export const contacts: ContactListProps[] = [
     label: "Linkedin",
     icon: <LinkedInLogoIcon className="h-icon w-icon" />,
   },
-  {
-    link: "/",
-    label: "Instagram",
-    icon: <InstagramLogoIcon className="h-icon w-icon" />,
-  },
+  // {
+  //   link: "/",
+  //   label: "Instagram",
+  //   icon: <InstagramLogoIcon className="h-icon w-icon" />,
+  // },
   {
     link: "mailto:mirsyadalghifary@gmail.com",
     label: "Email",
     icon: <EnvelopeClosedIcon className="h-icon w-icon" />,
   },
-  {
-    link: "/",
-    label: "Youtube",
-    icon: <YoutubeIcon />,
-  },
+  // {
+  //   link: "/",
+  //   label: "Youtube",
+  //   icon: <YoutubeIcon />,
+  // },
 ];
 
 // export const projects: ProjectsProps[] = [

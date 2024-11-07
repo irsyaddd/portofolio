@@ -1,7 +1,7 @@
 import { supabase } from "../../supabase";
 import { unstable_noStore as noStore } from "next/cache";
 
-export async function getProjects() {
+export const GetProjects = async () => {
   noStore();
   try {
     const { data: projects, error } = await supabase
@@ -15,9 +15,9 @@ export async function getProjects() {
   } catch (error) {
     throw error;
   }
-}
+};
 
-export async function getProjectsDetail(slug: string) {
+export const GetProjectsDetail = async (slug: string) => {
   noStore();
   try {
     const { data: project_detail, error } = await supabase
@@ -32,4 +32,4 @@ export async function getProjectsDetail(slug: string) {
   } catch (error) {
     console.log("Error Fetching Program Detail, Cause: ", error);
   }
-}
+};
