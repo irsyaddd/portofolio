@@ -2,13 +2,18 @@ import { Button } from "@/components/ui/button";
 import { contacts } from "@/data";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 import React from "react";
 
-export default function Contacts() {
+export default function Contacts({
+  children,
+  className,
+  ...props
+}: React.HTMLAttributes<HTMLDivElement>) {
   return (
-    <Contact className="flex gap-4">
+    <Contact className={cn("flex", className)}>
       {contacts.map((item, index) => (
-        <Button variant="outline" size={"icon"} key={index} asChild>
+        <Button variant="ghost" key={index} size={"icon"}>
           <Link href={item.link}>
             {item.icon}
             <span className="sr-only">{item.label}</span>
@@ -25,7 +30,7 @@ function Contact({
   ...props
 }: React.HTMLAttributes<HTMLDivElement>) {
   return (
-    <div className={cn(className, "flex gap-4")} {...props}>
+    <div className={cn(className)} {...props}>
       {children}
     </div>
   );

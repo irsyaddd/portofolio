@@ -21,13 +21,14 @@ const config = {
       fontFamily: {
         sans: ["var(--font-geist-sans)"],
         mono: ["var(--font-geist-mono)"],
+        artsy: ["var(--font-gelasio)"],
       },
       spacing: {
         icon: "1.2rem",
       },
       colors: {
         paragraph: {
-          dark: "hsl(0 0% 89.8%)",
+          dark: "hsl(0 0% 59.8%)",
           light: "hsl(0 0% 43.5%)",
         },
         border: "hsl(var(--border))",
