@@ -42,12 +42,12 @@ export default async function IndexPage() {
     <div className="container max-w-6xl">
       <Header className="flex flex-col">
         <div className="flex justify-between items-center">
-          <h1 className="font-semibold font-mono uppercase text-3xl tracking-tight">
+          <h1 className="font-semibold font-mono uppercase md:text-3xl text-2xl tracking-tight">
             Irsyad Al Ghifary
           </h1>
           <ThemeToggle />
         </div>
-        <div className="dark:text-paragraph-dark text-paragraph-light my-10 w-1/2 text-balance">
+        <div className="dark:text-paragraph-dark text-paragraph-light my-10 md:w-1/2 text-balance">
           <p>
             Frontend developer blending{" "}
             <span className="font-artsy italic">creativity</span> and{" "}
