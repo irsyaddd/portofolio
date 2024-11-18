@@ -1,4 +1,5 @@
 import Contacts from "@/components/contacts";
+import ProjectsGrid from "@/components/projects-grid";
 import { ThemeToggle } from "@/components/theme-toogle";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
@@ -65,7 +66,8 @@ export default async function IndexPage() {
           </p>
         </div>
       </Header>
-      <div className="my-6">
+      <ProjectsGrid />
+      {/* <div className="my-6">
         <h4 className="uppercase tracking-tighter font-medium font-mono">
           Projects
         </h4>
@@ -94,11 +96,11 @@ export default async function IndexPage() {
             </Link>
           ))}
         </ul>
-      </div>
-      <h4 className="uppercase tracking-tighter font-medium font-mono">
+      </div> */}
+      {/* <h4 className="uppercase tracking-tighter font-medium font-mono">
         CONTACTS
       </h4>
-      <Contacts className="my-4" />
+      <Contacts className="my-4" /> */}
     </div>
   );
 }
