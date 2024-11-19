@@ -56,6 +56,10 @@
   .project-text {
     @apply font-mono uppercase text-xs font-medium tracking-wide flex items-end justify-start pl-3.5 py-2.5;
   }
+
+  .center-absolute {
+    @apply absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2;
+  }
 }
 
 @layer base {

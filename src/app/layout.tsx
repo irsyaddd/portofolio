@@ -39,7 +39,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <main className="py-32">
-            <div className="max-w-[90rem] mx-auto flex gap-12 selection:bg-indigo-300 selection:text-indigo-900">
+            <div className="max-w-[90rem] mx-auto selection:bg-indigo-300 selection:text-indigo-900">
               {children}
             </div>
             <Toaster />
