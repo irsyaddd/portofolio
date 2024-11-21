@@ -1,7 +1,6 @@
-// import Tiptap from "@/components/tiptap/tiptap";
-// import { Button } from "@/components/ui/button";
-// import { GetProjectsDetail } from "@/lib/action";
-// import Link from "next/link";
+import Tiptap from "@/components/tiptap/tiptap";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 // export default async function ProjectDetailPage({
 //   params,
@@ -27,3 +26,9 @@
 //     </div>
 //   );
 // }
+
+import React from "react";
+
+export default function page() {
+  return <div>page</div>;
+}
