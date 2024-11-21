@@ -2,6 +2,7 @@
 
 import React from "react";
 import GridLayout from "react-grid-layout";
+import { Camera, CameraOff } from "lucide-react";
 
 import { useMounted } from "@/lib/hooks";
 import { cn } from "@/lib/utils";
@@ -16,6 +17,7 @@ import BookingTicket from "./booking-ticket";
 import Receipt from "./receipt";
 import { BackgroundColor, TextColor } from "@/types/tailwind";
 import ClueCatch from "./cluecatch";
+import LernitLMS from "./lernit-lms";
 
 type Props = {
   title: string;
@@ -78,6 +80,7 @@ const projects: Props[] = [
   {
     title: "Lernit LMS",
     block_config: { i: "PRJ-5", x: 3, y: 1, w: 1, h: 6, isResizable: false },
+    project_content: <LernitLMS />,
   },
 ];
 
@@ -90,7 +93,7 @@ export default function ProjectsGrid() {
         <div
           key={val.block_config.i}
           className={cn(
-            "group border z-50 overflow-hidden dark:border-white/10 dark:bg-zinc-800 rounded-sm shadow-sm project-text relative cursor-pointer",
+            "group/grid-item border z-50 overflow-hidden dark:border-white/10 dark:bg-zinc-800 rounded-sm shadow-sm project-text relative cursor-pointer",
             val.bgColor ?? "bg-white"
           )}
           data-grid={val.block_config}
@@ -98,7 +101,7 @@ export default function ProjectsGrid() {
           {val.project_content}
           <span
             className={cn(
-              "group-hover:text-indigo-500 transition-colors duration-100 ease-in max-w-24",
+              "group-hover/grid-item:text-indigo-500 transition-colors duration-100 ease-in max-w-24",
               val.textColor
             )}
           >

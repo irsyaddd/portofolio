@@ -11,6 +11,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useEffect, useState } from "react";
+import { Moon, Sun } from "lucide-react";
 
 export function ThemeToggle() {
   const [mounted, setMounted] = useState(false);
@@ -35,9 +36,15 @@ export function ThemeToggle() {
       className="center-absolute"
     >
       {theme === "dark" ? (
-        <MoonIcon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+        <Moon
+          fill="#4f46e5"
+          className="absolute text-indigo-600 h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100 shadow-sm "
+        />
       ) : (
-        <SunIcon className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+        <Sun
+          fill="#fbbf24"
+          className="h-[1.2rem] text-amber-400 w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0"
+        />
       )}
       <span className="sr-only">Toggle theme</span>
     </Button>
