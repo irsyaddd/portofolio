@@ -2,7 +2,6 @@ import { Button } from "@/components/ui/button";
 import { contacts } from "@/data";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
 import React from "react";
 
 export default function Contacts({
@@ -30,7 +29,7 @@ function Contact({
   ...props
 }: React.HTMLAttributes<HTMLDivElement>) {
   return (
-    <div className={cn(className)} {...props}>
+    <div className={cn("center-absolute", className)} {...props}>
       {children}
     </div>
   );

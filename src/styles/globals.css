@@ -54,7 +54,7 @@
 
 @layer utilities {
   .project-text {
-    @apply font-mono uppercase text-xs font-medium tracking-wide flex items-end justify-start pl-3.5 py-2.5;
+    @apply select-none font-mono uppercase text-xs font-medium tracking-wide flex items-end justify-start pl-3.5 py-2.5;
   }
 
   .center-absolute {
