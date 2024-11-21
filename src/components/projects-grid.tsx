@@ -90,7 +90,7 @@ export default function ProjectsGrid() {
         <div
           key={val.block_config.i}
           className={cn(
-            "group border z-50 overflow-hidden dark:border-white/10 dark:bg-zinc-800 rounded-sm shadow-sm project-text relative",
+            "group border z-50 overflow-hidden dark:border-white/10 dark:bg-zinc-800 rounded-sm shadow-sm project-text relative cursor-pointer",
             val.bgColor ?? "bg-white"
           )}
           data-grid={val.block_config}

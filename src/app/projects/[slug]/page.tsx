@@ -29,6 +29,6 @@ import Link from "next/link";
 
 import React from "react";
 
-export default function page() {
-  return <div>page</div>;
+export default function page({ params }: { params: { slug: string } }) {
+  return <div>{params.slug}</div>;
 }
