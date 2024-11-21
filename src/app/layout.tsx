@@ -33,13 +33,15 @@ export default function RootLayout({
       <body>
         <ThemeProvider
           storageKey="theme"
-          attribute="class"
-          defaultTheme="light"
-          enableSystem
+          attribute="data-theme"
+          defaultTheme="dark"
+          enableSystem={false}
           disableTransitionOnChange
         >
           <main className="py-32">
-            <div className="max-w-[90rem] mx-auto flex gap-12">{children}</div>
+            <div className="max-w-[90rem] mx-auto selection:bg-indigo-300 selection:text-indigo-900">
+              {children}
+            </div>
             <Toaster />
             <SpeedInsights />
           </main>

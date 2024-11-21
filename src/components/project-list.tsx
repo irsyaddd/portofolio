@@ -1,5 +1,4 @@
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
-import { GetProjects } from "@/lib/action";
 import { cn, formatDate } from "@/lib/utils";
 import { ImageIcon } from "@radix-ui/react-icons";
 import Image from "next/image";
@@ -11,11 +10,10 @@ export default async function ProjectList({
   className,
   ...props
 }: React.HTMLAttributes<HTMLDivElement>) {
-  const projects = await GetProjects();
-
   return (
     <div className={cn(className, "space-y-7")} {...props}>
-      <ProjectContainer>
+      test
+      {/* <ProjectContainer>
         {projects.map((project, index) => (
           <Link key={index} href={`/projects/${project.slug}`}>
             <Card className="dark:bg-zinc-900 rounded-none shadow-none">
@@ -37,7 +35,7 @@ export default async function ProjectList({
             </Card>
           </Link>
         ))}
-      </ProjectContainer>
+      </ProjectContainer> */}
     </div>
   );
 }
