@@ -29,7 +29,7 @@ function Contact({
   ...props
 }: React.HTMLAttributes<HTMLDivElement>) {
   return (
-    <div className={cn("center-absolute", className)} {...props}>
+    <div className={cn(className)} {...props}>
       {children}
     </div>
   );

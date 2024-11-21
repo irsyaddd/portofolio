@@ -33,7 +33,7 @@ export function ThemeToggle() {
       variant="outline"
       size="icon"
       onClick={handleToggle}
-      className="center-absolute"
+      // className="center-absolute"
     >
       {theme === "dark" ? (
         <Moon
