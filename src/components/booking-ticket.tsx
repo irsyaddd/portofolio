@@ -13,7 +13,7 @@ export default function BookingTicket({
       )}
       {...props}
     >
-      Booking Ticket
+      FRONTEND
     </div>
   );
 }

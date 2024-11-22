@@ -2,23 +2,14 @@
 
 import React from "react";
 import GridLayout from "react-grid-layout";
-import { Camera, CameraOff } from "lucide-react";
 
 import { useMounted } from "@/lib/hooks";
 import { cn } from "@/lib/utils";
-import Contacts from "./contacts";
 
+import { projects } from "@/data";
 import "../styles/custom-rgl.css";
 import "/node_modules/react-grid-layout/css/styles.css";
 import "/node_modules/react-resizable/css/styles.css";
-import { ThemeToggle } from "./theme-toogle";
-import FancyButton from "./fancy-button";
-import BookingTicket from "./booking-ticket";
-import Receipt from "./receipt";
-import { BackgroundColor, TextColor } from "@/types/tailwind";
-import ClueCatch from "./cluecatch";
-import LernitLMS from "./lernit-lms";
-import { projects } from "@/data";
 
 
 

@@ -46,7 +46,7 @@ export const contacts: ContactListProps[] = [
 
 export const projects: ProjectProps[] = [
   {
-    title: "Button",
+    title: "Resume",
     block_config: { i: "button", x: 0, y: 0, w: 1, h: 6, isResizable: false },
     project_content: <FancyButton className="center-absolute" />,
   },
