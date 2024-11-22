@@ -1,8 +1,18 @@
+import { cn } from "@/lib/utils";
 import React from "react";
 
-export default function Receipt() {
+export default function Receipt({
+  className,
+  ...props
+}: React.HTMLAttributes<HTMLDivElement>) {
   return (
-    <div className="absolute rounded-sm dark:text-black -right-20 -rotate-[8deg] border h-[320px] top-4 translate-y-0 hover:-translate-y-2 p-4 shadow-sm hover:shadow-md w-64 bg-white transition-all duration-200 ease-in-outn will-change-transform">
+    <div
+      className={cn(
+        "border h-[320px] rounded-sm dark:text-black p-4 shadow-sm hover:shadow-md w-64 bg-white transition-all duration-200 ease-in-outn will-change-transform",
+        className
+      )}
+      {...props}
+    >
       Receipt
     </div>
   );

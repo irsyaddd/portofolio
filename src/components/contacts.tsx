@@ -5,12 +5,11 @@ import Link from "next/link";
 import React from "react";
 
 export default function Contacts({
-  children,
   className,
   ...props
 }: React.HTMLAttributes<HTMLDivElement>) {
   return (
-    <Contact className={cn("flex", className)}>
+    <div className={cn("flex", className)}>
       {contacts.map((item, index) => (
         <Button variant="ghost" key={index} size={"icon"}>
           <Link href={item.link}>
@@ -19,18 +18,6 @@ export default function Contacts({
           </Link>
         </Button>
       ))}
-    </Contact>
-  );
-}
-
-function Contact({
-  children,
-  className,
-  ...props
-}: React.HTMLAttributes<HTMLDivElement>) {
-  return (
-    <div className={cn("center-absolute", className)} {...props}>
-      {children}
     </div>
   );
 }

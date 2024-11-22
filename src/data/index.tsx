@@ -1,5 +1,12 @@
+import BookingTicket from "@/components/booking-ticket";
+import ClueCatch from "@/components/cluecatch";
+import Contacts from "@/components/contacts";
+import FancyButton from "@/components/fancy-button";
 import { YoutubeIcon } from "@/components/icons";
-import { ContactListProps } from "@/types";
+import LernitLMS from "@/components/lernit-lms";
+import Receipt from "@/components/receipt";
+import { ThemeToggle } from "@/components/theme-toogle";
+import { ContactListProps, ProjectProps } from "@/types";
 import {
   EnvelopeClosedIcon,
   GitHubLogoIcon,
@@ -18,11 +25,6 @@ export const contacts: ContactListProps[] = [
     label: "Linkedin",
     icon: <LinkedInLogoIcon className="h-icon w-icon" />,
   },
-  // {
-  //   link: "/",
-  //   label: "Instagram",
-  //   icon: <InstagramLogoIcon className="h-icon w-icon" />,
-  // },
   {
     link: "mailto:mirsyadalghifary@gmail.com",
     label: "Email",
@@ -30,47 +32,56 @@ export const contacts: ContactListProps[] = [
   },
   // {
   //   link: "/",
+  //   label: "Instagram",
+  //   icon: <InstagramLogoIcon className="h-icon w-icon" />,
+  // },
+  // {
+  //   link: "/",
   //   label: "Youtube",
   //   icon: <YoutubeIcon />,
   // },
 ];
 
-// export const projects: ProjectsProps[] = [
-//   {
-//     title: "Personal Website",
-//     image: <ImageIcon className="h-14 w-14 opacity-20" />,
-//     content: "Blabla",
-//     created_at: "2024-01-24",
-//   },
-//   {
-//     title: "Nowted (Design Challenge)",
-//     image: <ImageIcon className="h-14 w-14 opacity-20" />,
-//     content: "Blabla",
-//     created_at: "2023-07-28",
-//   },
-//   {
-//     title: "Boleh Belajar Website",
-//     image: <ImageIcon className="h-14 w-14 opacity-20" />,
-//     content: "Blabla",
-//     created_at: "2024-01-12",
-//   },
 
-//   {
-//     title: "Vue Tweet Component",
-//     image: <ImageIcon className="h-14 w-14 opacity-20" />,
-//     content: "Blabla",
-//     created_at: "2023-11-13",
-//   },
-//   {
-//     title: "Certificate Generator",
-//     image: <ImageIcon className="h-14 w-14 opacity-20" />,
-//     content: "Blabla",
-//     created_at: "2023-02-05",
-//   },
-//   {
-//     title: "Curhat Dong",
-//     image: <ImageIcon className="h-14 w-14 opacity-20" />,
-//     content: "Blabla",
-//     created_at: "2023-02-02",
-//   },
-// ];
+
+export const projects: ProjectProps[] = [
+  {
+    title: "Button",
+    block_config: { i: "button", x: 0, y: 0, w: 1, h: 6, isResizable: false },
+    project_content: <FancyButton className="center-absolute" />,
+  },
+  {
+    title: "Some UI Exploration",
+    block_config: { i: "booking-ticket", x: 1, y: 0, w: 2, h: 10, isResizable: false },
+    project_content: <BookingTicket className="center-absolute" />,
+  },
+  {
+    title: "Contact",
+    block_config: { i: "contact", x: 3, y: 0, w: 1, h: 4, isResizable: false },
+    project_content: <Contacts className="center-absolute" />,
+  },
+  {
+    title: "See More",
+    block_config: { i: "see-more", x: 3, y: 0, w: 1, h: 2, isResizable: false },
+  },
+  {
+    title: "",
+    block_config: { i: "darkmode-toggle", x: 3, y: 0, w: 1, h: 4, isResizable: false, },
+    project_content: <ThemeToggle className="center-absolute" />,
+  },
+  {
+    title: "Another UI Exploration",
+    block_config: { i: "receipt", x: 0, y: 0, w: 1, h: 10, isResizable: false },
+    project_content: <Receipt className="absolute -right-20 -rotate-[8deg] top-4 translate-y-0 hover:-translate-y-2" />
+  },
+  {
+    title: "ClueCatch",
+    block_config: { i: "cluecatch", x: 1, y: 1, w: 2, h: 6, isResizable: false },
+    project_content: <ClueCatch className="center-absolute" />,
+  },
+  {
+    title: "Lernitt LMS",
+    block_config: { i: "lernitt-lms", x: 3, y: 1, w: 1, h: 6, isResizable: false },
+    project_content: <LernitLMS className="center-absolute" />,
+  },
+];
