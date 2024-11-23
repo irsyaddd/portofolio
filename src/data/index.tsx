@@ -54,6 +54,7 @@ export const projects: ProjectProps[] = [
     title: "Some UI Exploration",
     block_config: { i: "booking-ticket", x: 1, y: 0, w: 2, h: 10, isResizable: false },
     project_content: <BookingTicket className="center-absolute" />,
+    slug: '/booking-ticket'
   },
   {
     title: "Contact",
@@ -72,16 +73,19 @@ export const projects: ProjectProps[] = [
   {
     title: "Another UI Exploration",
     block_config: { i: "receipt", x: 0, y: 0, w: 1, h: 10, isResizable: false },
-    project_content: <Receipt className="absolute -right-20 -rotate-[8deg] top-4 translate-y-0 hover:-translate-y-2" />
+    project_content: <Receipt className="absolute -right-20 -rotate-[8deg] top-4 translate-y-0 hover:-translate-y-2" />,
+    slug: '/receipt'
   },
   {
     title: "ClueCatch",
     block_config: { i: "cluecatch", x: 1, y: 1, w: 2, h: 6, isResizable: false },
     project_content: <ClueCatch className="center-absolute" />,
+    slug: '/clue-catch'
   },
   {
     title: "Lernitt LMS",
     block_config: { i: "lernitt-lms", x: 3, y: 1, w: 1, h: 6, isResizable: false },
     project_content: <LernitLMS className="center-absolute" />,
+    slug: '/lernitt-lms'
   },
 ];

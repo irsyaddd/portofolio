@@ -19,6 +19,7 @@ export type ProjectProps = {
   bgColor?: BackgroundColor;
   textColor?: TextColor;
   project_content?: React.ReactNode;
+  slug?: string;
 };
 
 // export interface ProjectsProps {

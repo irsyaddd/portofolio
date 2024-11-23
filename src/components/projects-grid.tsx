@@ -10,27 +10,30 @@ import { projects } from "@/data";
 import "../styles/custom-rgl.css";
 import "/node_modules/react-grid-layout/css/styles.css";
 import "/node_modules/react-resizable/css/styles.css";
-
-
+import { useRouter } from "next/navigation";
 
 export default function ProjectsGrid() {
   const isMounted = useMounted();
+  const router = useRouter();
 
   const children = React.useMemo(() => {
     return projects.map((val) => {
       return (
         <div
+          data-grid={val.block_config}
           key={val.block_config.i}
           className={cn(
-            "group/grid-item border z-50 overflow-hidden dark:border-white/10 dark:bg-zinc-800 rounded-sm shadow-sm project-text relative cursor-pointer",
+            "group/grid-item border z-50 overflow-hidden",
+            "dark:border-white/10 dark:bg-zinc-800 rounded-sm",
+            "shadow-sm project-text relative cursor-pointer",
             val.bgColor ?? "bg-white"
           )}
-          data-grid={val.block_config}
         >
           {val.project_content}
           <span
             className={cn(
-              "group-hover/grid-item:text-indigo-500 transition-colors duration-100 ease-in max-w-24",
+              "group-hover/grid-item:text-indigo-500",
+              "transition-colors duration-100 ease-in max-w-24",
               val.textColor
             )}
           >
