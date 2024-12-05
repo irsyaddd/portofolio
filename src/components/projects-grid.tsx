@@ -11,6 +11,7 @@ import "../styles/custom-rgl.css";
 import "/node_modules/react-grid-layout/css/styles.css";
 import "/node_modules/react-resizable/css/styles.css";
 import { useRouter } from "next/navigation";
+import ResponsiveRGL from "./responsive-rgl";
 
 export default function ProjectsGrid() {
   const isMounted = useMounted();
@@ -51,7 +52,8 @@ export default function ProjectsGrid() {
         "transition-[opacity,_transform] duration-700 delay-150"
       )}
     >
-      <GridLayout
+      <ResponsiveRGL />
+      {/* <GridLayout
         className="layout"
         useCSSTransforms={false}
         containerPadding={[0, 0]}
@@ -62,7 +64,7 @@ export default function ProjectsGrid() {
         width={1088}
       >
         {children}
-      </GridLayout>
+      </GridLayout> */}
     </div>
   );
 }
