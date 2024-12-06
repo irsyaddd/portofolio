@@ -1,28 +1,29 @@
 "use client";
 
 import React from "react";
-import GridLayout from "react-grid-layout";
+import { Responsive, WidthProvider } from "react-grid-layout";
 
-import { useMounted } from "@/lib/hooks";
+import { useBreakpoint, useMounted } from "@/lib/hooks";
 import { cn } from "@/lib/utils";
 
-import { projects } from "@/data";
+import { breakpoints, projects } from "@/data";
+import { lgLayout, mdLayout, smLayout } from "@/data/layout";
 import "../styles/custom-rgl.css";
 import "/node_modules/react-grid-layout/css/styles.css";
 import "/node_modules/react-resizable/css/styles.css";
-import { useRouter } from "next/navigation";
-import ResponsiveRGL from "./responsive-rgl";
+
+const ResponsiveGridLayout = WidthProvider(Responsive);
 
 export default function ProjectsGrid() {
   const isMounted = useMounted();
-  const router = useRouter();
+  const { breakpoint, setBreakpoint } = useBreakpoint();
+  const layouts = { lg: lgLayout, md: mdLayout, sm: smLayout };
 
   const children = React.useMemo(() => {
     return projects.map((val) => {
       return (
         <div
-          data-grid={val.block_config}
-          key={val.block_config.i}
+          key={val.i}
           className={cn(
             "group/grid-item border z-50 overflow-hidden",
             "dark:border-white/10 dark:bg-zinc-800 rounded-sm",
@@ -49,22 +50,23 @@ export default function ProjectsGrid() {
     <div
       className={cn(
         isMounted ? "translate-y-0 opacity-100" : "-translate-y-6 opacity-0",
-        "transition-[opacity,_transform] duration-700 delay-150"
+        "transition-[opacity,_transform] duration-700 delay-150",
       )}
     >
-      <ResponsiveRGL />
-      {/* <GridLayout
+      <ResponsiveGridLayout
         className="layout"
-        useCSSTransforms={false}
+        layouts={layouts}
         containerPadding={[0, 0]}
-        resizeHandles={["nw", "se"]}
-        cols={4}
         rowHeight={30}
-        maxRows={120}
-        width={1088}
+        isBounded
+        isResizable={false}
+        onBreakpointChange={setBreakpoint}
+        isDraggable={["lg", "md"].includes(breakpoint)}
+        breakpoints={breakpoints}
+        cols={{ lg: 4, md: 4, sm: 2, xs: 2, xxs: 2 }}
       >
         {children}
-      </GridLayout> */}
+      </ResponsiveGridLayout>
     </div>
   );
 }

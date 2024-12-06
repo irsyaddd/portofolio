@@ -6,5 +6,9 @@ export default function ContentWrapper({
   children,
   ...props
 }: React.HTMLAttributes<HTMLDivElement>) {
-  return <div className={cn(className, "container max-w-6xl")}>{children}</div>;
+  return (
+    <div className={cn(className, "container max-w-7xl")} {...props}>
+      {children}
+    </div>
+  );
 }

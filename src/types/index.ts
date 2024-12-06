@@ -1,3 +1,4 @@
+import { Layout } from "react-grid-layout";
 import { BackgroundColor, TextColor } from "./tailwind";
 export interface ContactListProps {
   link: string;
@@ -7,15 +8,7 @@ export interface ContactListProps {
 
 export type ProjectProps = {
   title: string;
-  block_config: {
-    i: string;
-    x: number;
-    y: number;
-    w: number;
-    h: number;
-    static?: boolean;
-    isResizable?: boolean;
-  };
+  i: string;
   bgColor?: BackgroundColor;
   textColor?: TextColor;
   project_content?: React.ReactNode;

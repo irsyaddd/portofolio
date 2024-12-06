@@ -34,7 +34,7 @@ export default function Introduction() {
             BDD
           </a>
           . Passionate about frontend learning and currently like to read and
-          experiment with Three.js, Framer Motion and CyberSecurity.
+          experiment with Three.js and Motion.
         </p>
       </div>
     </Header>

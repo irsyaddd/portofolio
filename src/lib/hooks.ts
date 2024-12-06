@@ -1,7 +1,7 @@
 "use client";
 
+import { breakpoints } from "@/data";
 import { useEffect, useLayoutEffect, useState } from "react";
-import { breakpoints } from "./utils";
 
 function useBreakpoint() {
   const [breakpoint, setBreakpoint] = useState<string>("");

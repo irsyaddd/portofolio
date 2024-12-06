@@ -30,62 +30,62 @@ export const contacts: ContactListProps[] = [
     label: "Email",
     icon: <EnvelopeClosedIcon className="h-icon w-icon" />,
   },
-  // {
-  //   link: "/",
-  //   label: "Instagram",
-  //   icon: <InstagramLogoIcon className="h-icon w-icon" />,
-  // },
-  // {
-  //   link: "/",
-  //   label: "Youtube",
-  //   icon: <YoutubeIcon />,
-  // },
 ];
 
+interface Breakpoints {
+  [key: string]: number;
+}
 
+export const breakpoints: Breakpoints = {
+  lg: 1199,
+  md: 799,
+  sm: 374,
+  xs: 319,
+  xxs: 0,
+};
 
 export const projects: ProjectProps[] = [
   {
     title: "Resume",
-    block_config: { i: "button", x: 0, y: 0, w: 1, h: 6, isResizable: false },
+    i: "resume",
     project_content: <FancyButton className="center-absolute" />,
   },
   {
     title: "Some UI Exploration",
-    block_config: { i: "booking-ticket", x: 1, y: 0, w: 2, h: 10, isResizable: false },
+    i: 'booking-ticket-ui',
     project_content: <BookingTicket className="center-absolute" />,
-    slug: '/booking-ticket'
+    slug: "/booking-ticket",
   },
   {
     title: "Contact",
-    block_config: { i: "contact", x: 3, y: 0, w: 1, h: 4, isResizable: false },
+    i: 'contact',
     project_content: <Contacts className="center-absolute" />,
   },
   {
     title: "See More",
-    block_config: { i: "see-more", x: 3, y: 0, w: 1, h: 2, isResizable: false },
+    i: "see-more"
   },
   {
     title: "",
-    block_config: { i: "darkmode-toggle", x: 3, y: 0, w: 1, h: 4, isResizable: false, },
+    i: 'dark-mode',
     project_content: <ThemeToggle className="center-absolute" />,
   },
   {
     title: "Another UI Exploration",
-    block_config: { i: "receipt", x: 0, y: 0, w: 1, h: 10, isResizable: false },
-    project_content: <Receipt className="absolute -right-20 -rotate-[8deg] top-4 translate-y-0 hover:-translate-y-2" />,
-    slug: '/receipt'
+    i: 'another-ui-expo',
+    project_content: <Receipt className="absolute -right-6 top-20 translate-y-2 hover:translate-y-0 w-[70%]" />,
+    slug: "/receipt",
   },
   {
     title: "ClueCatch",
-    block_config: { i: "cluecatch", x: 1, y: 1, w: 2, h: 6, isResizable: false },
+    i: 'clue-catch',
     project_content: <ClueCatch className="center-absolute" />,
-    slug: '/clue-catch'
+    slug: "/clue-catch",
   },
   {
     title: "Lernitt LMS",
-    block_config: { i: "lernitt-lms", x: 3, y: 1, w: 1, h: 6, isResizable: false },
+    i: 'lernitt',
     project_content: <LernitLMS className="center-absolute" />,
-    slug: '/lernitt-lms'
+    slug: "/lernitt-lms",
   },
 ];
