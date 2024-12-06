@@ -2,7 +2,6 @@ import BookingTicket from "@/components/booking-ticket";
 import ClueCatch from "@/components/cluecatch";
 import Contacts from "@/components/contacts";
 import FancyButton from "@/components/fancy-button";
-import { YoutubeIcon } from "@/components/icons";
 import LernitLMS from "@/components/lernit-lms";
 import Receipt from "@/components/receipt";
 import { ThemeToggle } from "@/components/theme-toogle";
@@ -10,7 +9,6 @@ import { ContactListProps, ProjectProps } from "@/types";
 import {
   EnvelopeClosedIcon,
   GitHubLogoIcon,
-  InstagramLogoIcon,
   LinkedInLogoIcon,
 } from "@radix-ui/react-icons";
 
@@ -46,46 +44,56 @@ export const breakpoints: Breakpoints = {
 
 export const projects: ProjectProps[] = [
   {
-    title: "Resume",
+    title: "",
     i: "resume",
-    project_content: <FancyButton className="center-absolute cursor-pointer" />,
+    project_content: <FancyButton className="center-absolute" />,
+    isWIP: false,
   },
   {
-    title: "Some UI Exploration",
-    i: 'booking-ticket-ui',
-    project_content: <BookingTicket className="center-absolute cursor-pointer" />,
+    title: `"Make it exist first, Enhance it after."`,
+    i: "booking-ticket-ui",
+    project_content: <BookingTicket className="center-absolute" />,
+    isWIP: false,
     slug: "/booking-ticket",
   },
   {
-    title: "Contact",
-    i: 'contact',
-    project_content: <Contacts className="center-absolute cursor-pointer" />,
+    title: "",
+    i: "contact",
+    project_content: <Contacts className="center-absolute" />,
+    isWIP: false,
   },
+  // {
+  //   title: "Coming soon",
+  //   i: "see-more",
+  //   isWIP: false,
+  // },
   {
-    title: "See More",
-    i: "see-more"
+    title: "",
+    i: "dark-mode",
+    project_content: <ThemeToggle className="center-absolute" />,
+    isWIP: false,
   },
   {
     title: "",
-    i: 'dark-mode',
-    project_content: <ThemeToggle className="center-absolute cursor-pointer" />,
-  },
-  {
-    title: "Another UI Exploration",
-    i: 'another-ui-expo',
-    project_content: <Receipt className="absolute cursor-pointer -right-6 top-20 translate-y-2 hover:translate-y-0 w-[70%]" />,
+    i: "another-ui-expo",
+    project_content: <Receipt className="center-absolute" />,
+    isWIP: false,
     slug: "/receipt",
   },
   {
     title: "ClueCatch",
-    i: 'clue-catch',
-    project_content: <ClueCatch className="center-absolute cursor-pointer" />,
+    i: "clue-catch",
+    project_content: <ClueCatch className="center-absolute" />,
+    isWIP: true,
+    desc: "This is a game about guessing what word or object the player receive by asking a clue to other players. Built with Shadcn, Motion, Next.Js and WebSocket.",
     slug: "/clue-catch",
   },
   {
     title: "Lernitt LMS",
-    i: 'lernitt',
-    project_content: <LernitLMS className="center-absolute cursor-pointer" />,
+    i: "lernitt",
+    project_content: <LernitLMS className="center-absolute" />,
+    isWIP: true,
+    desc: "A Personal Learning Management System Project.",
     slug: "/lernitt-lms",
   },
 ];

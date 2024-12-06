@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import React from "react";
+import SmileySVG from "./smiley-svg";
 
 export default function BookingTicket({
   className,
@@ -8,12 +9,12 @@ export default function BookingTicket({
   return (
     <div
       className={cn(
-        "w-[58%] h-[20rem] border bottom-3 bg-white dark:text-black shadow-sm hover:shadow-md rounded-sm p-4 scale-[0.97] hover:scale-100 transition-all duration-200 ease-in-out",
+        "w-[58%] h-[20rem] flex flex-col gap-5 items-center justify-center text-center bottom-3 dark:text-black rounded-sm p-4 transition-all duration-200 ease-in-out",
         className
       )}
       {...props}
     >
-      FRONTEND
+      <SmileySVG />
     </div>
   );
 }

@@ -13,6 +13,8 @@ export type ProjectProps = {
   textColor?: TextColor;
   project_content?: React.ReactNode;
   slug?: string;
+  desc?: string;
+  isWIP?: boolean;
 };
 
 // export interface ProjectsProps {

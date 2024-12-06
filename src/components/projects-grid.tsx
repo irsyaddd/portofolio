@@ -12,6 +12,19 @@ import "../styles/custom-rgl.css";
 import "/node_modules/react-grid-layout/css/styles.css";
 import "/node_modules/react-resizable/css/styles.css";
 
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { QuestionMarkCircledIcon } from "@radix-ui/react-icons";
+import { HelpCircle } from "lucide-react";
+import { Button } from "./ui/button";
+import { Badge } from "./ui/badge";
+
 const ResponsiveGridLayout = WidthProvider(Responsive);
 
 export default function ProjectsGrid() {
@@ -27,15 +40,30 @@ export default function ProjectsGrid() {
           className={cn(
             "group/grid-item border z-50 overflow-hidden",
             "dark:border-white/10 dark:bg-zinc-800 rounded-sm",
-            "shadow-sm project-text relative cursor-pointer",
+            "shadow-sm project-text relative",
             val.bgColor ?? "bg-white"
           )}
         >
           {val.project_content}
+          {val.isWIP && (
+            <Dialog>
+              <DialogTrigger asChild className="absolute top-3 right-3 cursor-pointer">
+                <Badge variant={'secondary'}>Work In Progress</Badge>
+              </DialogTrigger>
+              <DialogContent>
+                <DialogHeader>
+                  <DialogTitle>{val.title}</DialogTitle>
+                  <DialogDescription>
+                    {val.desc}
+                  </DialogDescription>
+                </DialogHeader>
+              </DialogContent>
+            </Dialog>
+          )}
           <span
             className={cn(
               "group-hover/grid-item:text-indigo-500",
-              "transition-colors duration-100 ease-in max-w-24",
+              "transition-colors duration-100 ease-in lg:max-w-52",
               val.textColor
             )}
           >
@@ -50,7 +78,7 @@ export default function ProjectsGrid() {
     <div
       className={cn(
         isMounted ? "translate-y-0 opacity-100" : "-translate-y-6 opacity-0",
-        "transition-[opacity,_transform] duration-700 delay-150",
+        "transition-[opacity,_transform] duration-700 delay-150"
       )}
     >
       <ResponsiveGridLayout
