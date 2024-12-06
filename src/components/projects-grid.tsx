@@ -1,107 +1,69 @@
 "use client";
 
 import React from "react";
-import GridLayout from "react-grid-layout";
-import { Camera, CameraOff } from "lucide-react";
+import { Responsive, WidthProvider } from "react-grid-layout";
 
-import { useMounted } from "@/lib/hooks";
+import { useBreakpoint, useMounted } from "@/lib/hooks";
 import { cn } from "@/lib/utils";
-import Contacts from "./contacts";
 
+import { breakpoints, projects } from "@/data";
+import { lgLayout, mdLayout, smLayout } from "@/data/layout";
 import "../styles/custom-rgl.css";
 import "/node_modules/react-grid-layout/css/styles.css";
 import "/node_modules/react-resizable/css/styles.css";
-import { ThemeToggle } from "./theme-toogle";
-import FancyButton from "./fancy-button";
-import BookingTicket from "./booking-ticket";
-import Receipt from "./receipt";
-import { BackgroundColor, TextColor } from "@/types/tailwind";
-import ClueCatch from "./cluecatch";
-import LernitLMS from "./lernit-lms";
 
-type Props = {
-  title: string;
-  block_config: {
-    i: string;
-    x: number;
-    y: number;
-    w: number;
-    h: number;
-    static?: boolean;
-    isResizable?: boolean;
-  };
-  bgColor?: BackgroundColor;
-  textColor?: TextColor;
-  project_content?: React.ReactNode;
-};
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { QuestionMarkCircledIcon } from "@radix-ui/react-icons";
+import { HelpCircle } from "lucide-react";
+import { Button } from "./ui/button";
+import { Badge } from "./ui/badge";
 
-const projects: Props[] = [
-  {
-    title: "Fancy Button",
-    block_config: { i: "PRJ-1", x: 0, y: 0, w: 1, h: 6, isResizable: false },
-    project_content: <FancyButton />,
-  },
-  {
-    title: "Some UI Exploration",
-    block_config: { i: "PRJ-2", x: 1, y: 0, w: 2, h: 10, isResizable: false },
-    project_content: <BookingTicket />,
-  },
-  {
-    title: "Contact",
-    block_config: { i: "CONTACT", x: 3, y: 0, w: 1, h: 4, isResizable: false },
-    project_content: <Contacts />,
-  },
-  {
-    title: "See More",
-    block_config: { i: "SeeMore", x: 3, y: 0, w: 1, h: 2, isResizable: false },
-  },
-  {
-    title: "",
-    block_config: {
-      i: "darkomode-toggle",
-      x: 3,
-      y: 0,
-      w: 1,
-      h: 4,
-      isResizable: false,
-    },
-    project_content: <ThemeToggle />,
-  },
-  {
-    title: "Another UI Exploration",
-    block_config: { i: "PRJ-3", x: 0, y: 0, w: 1, h: 10, isResizable: false },
-    project_content: <Receipt />,
-  },
-  {
-    title: "ClueCatch",
-    block_config: { i: "PRJ-4", x: 1, y: 1, w: 2, h: 6, isResizable: false },
-    project_content: <ClueCatch />,
-  },
-  {
-    title: "Lernit LMS",
-    block_config: { i: "PRJ-5", x: 3, y: 1, w: 1, h: 6, isResizable: false },
-    project_content: <LernitLMS />,
-  },
-];
+const ResponsiveGridLayout = WidthProvider(Responsive);
 
 export default function ProjectsGrid() {
   const isMounted = useMounted();
+  const { breakpoint, setBreakpoint } = useBreakpoint();
+  const layouts = { lg: lgLayout, md: mdLayout, sm: smLayout };
 
   const children = React.useMemo(() => {
     return projects.map((val) => {
       return (
         <div
-          key={val.block_config.i}
+          key={val.i}
           className={cn(
-            "group/grid-item border z-50 overflow-hidden dark:border-white/10 dark:bg-zinc-800 rounded-sm shadow-sm project-text relative cursor-pointer",
+            "group/grid-item border z-50 overflow-hidden",
+            "dark:border-white/10 dark:bg-zinc-800 rounded-sm",
+            "shadow-sm project-text relative",
             val.bgColor ?? "bg-white"
           )}
-          data-grid={val.block_config}
         >
           {val.project_content}
+          {val.isWIP && (
+            <Dialog>
+              <DialogTrigger asChild className="absolute top-3 right-3 cursor-pointer">
+                <Badge variant={'secondary'}>Work In Progress</Badge>
+              </DialogTrigger>
+              <DialogContent>
+                <DialogHeader>
+                  <DialogTitle>{val.title}</DialogTitle>
+                  <DialogDescription>
+                    {val.desc}
+                  </DialogDescription>
+                </DialogHeader>
+              </DialogContent>
+            </Dialog>
+          )}
           <span
             className={cn(
-              "group-hover/grid-item:text-indigo-500 transition-colors duration-100 ease-in max-w-24",
+              "group-hover/grid-item:text-indigo-500",
+              "transition-colors duration-100 ease-in lg:max-w-52",
               val.textColor
             )}
           >
@@ -119,18 +81,20 @@ export default function ProjectsGrid() {
         "transition-[opacity,_transform] duration-700 delay-150"
       )}
     >
-      <GridLayout
+      <ResponsiveGridLayout
         className="layout"
-        useCSSTransforms={false}
+        layouts={layouts}
         containerPadding={[0, 0]}
-        resizeHandles={["nw", "se"]}
-        cols={4}
         rowHeight={30}
-        maxRows={120}
-        width={1088}
+        isBounded
+        isResizable={false}
+        onBreakpointChange={setBreakpoint}
+        isDraggable={["lg", "md"].includes(breakpoint)}
+        breakpoints={breakpoints}
+        cols={{ lg: 4, md: 4, sm: 2, xs: 2, xxs: 2 }}
       >
         {children}
-      </GridLayout>
+      </ResponsiveGridLayout>
     </div>
   );
 }

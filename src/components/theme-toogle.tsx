@@ -1,19 +1,16 @@
 "use client";
 
-import { MoonIcon, SunIcon } from "@radix-ui/react-icons";
 import { useTheme } from "next-themes";
 
 import { Button } from "@/components/ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { useEffect, useState } from "react";
+import { cn } from "@/lib/utils";
 import { Moon, Sun } from "lucide-react";
+import { useEffect, useState } from "react";
 
-export function ThemeToggle() {
+export function ThemeToggle({
+  className,
+  ...props
+}: React.HTMLAttributes<HTMLDivElement>) {
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
 
@@ -33,7 +30,7 @@ export function ThemeToggle() {
       variant="outline"
       size="icon"
       onClick={handleToggle}
-      // className="center-absolute"
+      className={cn(className)}
     >
       {theme === "dark" ? (
         <Moon
