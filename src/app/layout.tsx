@@ -38,7 +38,7 @@ export default function RootLayout({
           enableSystem={false}
           disableTransitionOnChange
         >
-          <main className="py-32">
+          <main>
             <div className=" selection:bg-indigo-300 selection:text-indigo-900">
               {children}
             </div>

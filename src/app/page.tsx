@@ -4,7 +4,7 @@ import ProjectsGrid from "@/components/projects-grid";
 
 export default async function IndexPage() {
   return (
-    <ContentWrapper>
+    <ContentWrapper className="py-32">
       <Introduction />
       <ProjectsGrid />
     </ContentWrapper>

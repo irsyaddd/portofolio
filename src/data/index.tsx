@@ -48,18 +48,18 @@ export const projects: ProjectProps[] = [
   {
     title: "Resume",
     i: "resume",
-    project_content: <FancyButton className="center-absolute" />,
+    project_content: <FancyButton className="center-absolute cursor-pointer" />,
   },
   {
     title: "Some UI Exploration",
     i: 'booking-ticket-ui',
-    project_content: <BookingTicket className="center-absolute" />,
+    project_content: <BookingTicket className="center-absolute cursor-pointer" />,
     slug: "/booking-ticket",
   },
   {
     title: "Contact",
     i: 'contact',
-    project_content: <Contacts className="center-absolute" />,
+    project_content: <Contacts className="center-absolute cursor-pointer" />,
   },
   {
     title: "See More",
@@ -68,24 +68,24 @@ export const projects: ProjectProps[] = [
   {
     title: "",
     i: 'dark-mode',
-    project_content: <ThemeToggle className="center-absolute" />,
+    project_content: <ThemeToggle className="center-absolute cursor-pointer" />,
   },
   {
     title: "Another UI Exploration",
     i: 'another-ui-expo',
-    project_content: <Receipt className="absolute -right-6 top-20 translate-y-2 hover:translate-y-0 w-[70%]" />,
+    project_content: <Receipt className="absolute cursor-pointer -right-6 top-20 translate-y-2 hover:translate-y-0 w-[70%]" />,
     slug: "/receipt",
   },
   {
     title: "ClueCatch",
     i: 'clue-catch',
-    project_content: <ClueCatch className="center-absolute" />,
+    project_content: <ClueCatch className="center-absolute cursor-pointer" />,
     slug: "/clue-catch",
   },
   {
     title: "Lernitt LMS",
     i: 'lernitt',
-    project_content: <LernitLMS className="center-absolute" />,
+    project_content: <LernitLMS className="center-absolute cursor-pointer" />,
     slug: "/lernitt-lms",
   },
 ];
