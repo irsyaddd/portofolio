@@ -6,6 +6,8 @@ import { Responsive, WidthProvider } from "react-grid-layout";
 import { useBreakpoint, useMounted } from "@/lib/hooks";
 import { cn } from "@/lib/utils";
 
+
+
 import { breakpoints, projects } from "@/data";
 import { lgLayout, mdLayout, smLayout } from "@/data/layout";
 import "../styles/custom-rgl.css";
@@ -20,9 +22,6 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { QuestionMarkCircledIcon } from "@radix-ui/react-icons";
-import { HelpCircle } from "lucide-react";
-import { Button } from "./ui/button";
 import { Badge } from "./ui/badge";
 
 const ResponsiveGridLayout = WidthProvider(Responsive);
@@ -40,7 +39,7 @@ export default function ProjectsGrid() {
           className={cn(
             "group/grid-item border z-50 overflow-hidden",
             "dark:border-white/10 dark:bg-zinc-800 rounded-sm",
-            "shadow-sm project-text relative",
+            "shadow-sm project-text relative cursor-pointer",
             val.bgColor ?? "bg-white"
           )}
         >
