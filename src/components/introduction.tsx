@@ -25,15 +25,7 @@ export default function Introduction() {
           Frontend developer blending{" "}
           <span className="font-artsy italic">creativity</span> and{" "}
           <span className="font-artsy italic">technical skills</span> to craft
-          memorable digital experiences. Currently a frontend dev at{" "}
-          <a
-            target="_blank"
-            href="https://bolehdicoba.com/"
-            className="text-indigo-600 dark:text-indigo-500 hover:underline"
-          >
-            BDD
-          </a>
-          . Passionate about frontend learning and currently like to read and
+          memorable digital experiences. Passionate about frontend learning and currently like to read and
           experiment with Three.js and Motion.
         </p>
       </div>

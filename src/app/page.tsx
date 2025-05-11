@@ -6,7 +6,8 @@ export default async function IndexPage() {
   return (
     <ContentWrapper className="py-32">
       <Introduction />
-      <ProjectsGrid />
+      {/* <ProjectsGrid /> */}
+      <p>Working on a new layout and updates, stay tune.</p>
     </ContentWrapper>
   );
 }
